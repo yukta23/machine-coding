@@ -1,0 +1,21 @@
+package com.parking.services;
+
+import com.parking.models.ParkingLot;
+import com.parking.utils.Color;
+import com.parking.utils.Type;
+
+public class ParkingServiceImpl implements ParkingService {
+
+	@Override
+	public ParkingLot createParkingLot(int parkingId, int floors, int slotsPerFloor) {
+		ParkingLot parkingLot = new ParkingLot(parkingId, floors, slotsPerFloor);
+		return null;
+	}
+
+	@Override
+	public String parkVehicle(Type vehicleType, String regNo, Color color) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

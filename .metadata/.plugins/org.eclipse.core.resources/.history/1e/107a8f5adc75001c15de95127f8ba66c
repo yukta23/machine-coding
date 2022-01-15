@@ -1,0 +1,18 @@
+package com.parking.models;
+
+import com.parking.utils.Color;
+import com.parking.utils.Type;
+
+public class Vehicle {
+	String registrationNumber;
+	Color color; 
+	Type type;
+	
+	Vehicle( registrationNumber, Type type, Color color) {
+		this.registrationNumber = registrationNumber;
+		this.type = type;
+		this.color = color;
+		
+	}
+	
+}

@@ -1,0 +1,31 @@
+package com.parking.models;
+
+public class ParkingLot {
+	public static int count = 0;
+	private int id;
+	private int numFloors;
+	private int numSlotsPerFloor;
+	
+	public ParkingLot(int numFloors, int numSlotsPerFloor) {
+		this.id = ++count;
+		this.numFloors = numFloors;
+		this.numSlotsPerFloor = numSlotsPerFloor;
+	}
+
+	public int getNumFloors() {
+		return numFloors;
+	}
+
+	public void setNumFloors(int numFloors) {
+		this.numFloors = numFloors;
+	}
+
+	public int getNumSlotsPerFloor() {
+		return numSlotsPerFloor;
+	}
+
+	public void setNumSlotsPerFloor(int numSlotsPerFloor) {
+		this.numSlotsPerFloor = numSlotsPerFloor;
+	}
+	
+}

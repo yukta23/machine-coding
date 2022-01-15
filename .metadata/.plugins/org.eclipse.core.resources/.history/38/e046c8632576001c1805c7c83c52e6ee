@@ -1,0 +1,13 @@
+package com.parking.main;
+
+import com.parking.services.ParkingService;
+import com.parking.services.ParkingServiceImpl;
+
+public class main {
+
+	public static void main(String[] args) {
+		ParkingService ps = new ParkingServiceImpl();
+
+	}
+
+}

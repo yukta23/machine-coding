@@ -1,0 +1,9 @@
+package com.parking.services;
+
+import com.parking.models.ParkingLot;
+
+public interface ParkingService {
+	ParkingLot createParkingLot(int parkingId, int floors, int slotsPerFloor);
+	String parkVehicle();
+	
+}

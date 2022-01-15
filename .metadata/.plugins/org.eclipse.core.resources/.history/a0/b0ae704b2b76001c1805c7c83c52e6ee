@@ -1,0 +1,12 @@
+package com.parking.services;
+
+import com.parking.models.ParkingLot;
+import com.parking.utils.Color;
+import com.parking.utils.Type;
+
+public interface ParkingService {
+	ParkingLot createParkingLot(int parkingId, int floors, int slotsPerFloor);
+	String parkVehicle(Type vehicleType, String regNo, Color color);
+	void showParkingLotStatus(int parkingId);
+	
+}

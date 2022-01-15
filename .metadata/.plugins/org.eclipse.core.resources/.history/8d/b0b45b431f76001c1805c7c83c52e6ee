@@ -1,0 +1,5 @@
+package com.parking.services;
+
+public class ParkingServiceImpl implements ParkingService {
+
+}

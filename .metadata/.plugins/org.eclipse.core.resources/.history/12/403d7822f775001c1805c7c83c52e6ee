@@ -1,0 +1,48 @@
+package com.snakeLadder.services;
+
+import java.util.ArrayList;
+
+import com.snakeLadder.models.Board;
+import com.snakeLadder.models.Ladder;
+import com.snakeLadder.models.Player;
+import com.snakeLadder.models.Snake;
+
+public class PlayGame {
+	ArrayList<Snake> snakes;
+	ArrayList<Ladder> ladders;
+	ArrayList<Player> players;
+	Board gameBoard;
+	int numPlayersDone;
+	public void init(ArrayList<Snake> snakes, ArrayList<Ladder> ladders, int boardSize, ArrayList<Player> players ) {
+		this.snakes = snakes;
+		this.ladders = ladders;
+		this.players = players;
+		this.gameBoard = new Board(boardSize);
+		this.numPlayersDone = 0;
+	}
+	
+	public int generateRandomNumber() {
+		int Max = 6, Min = 1;
+	    return Min + (int)(Math.random() * ((Max - Min) + 1));
+	}
+	
+	public void playGame() {
+		Boolean isGameOver = false;
+		Player currPlayer;
+		int diceNum;
+		while( !isGameOver ) {
+			for( int i = 0; i < players.size(); i++ ) {
+				currPlayer = players.get(i);
+				diceNum = this.generateRandomNumber();
+				this.move(currPlayer, diceNum);
+			}
+		}
+	}
+	
+	private void move(Player p, int num ) {
+		if (p.pos + num > this.gameBoard.size) {
+			return;
+		}
+		p.pos += num;
+	}
+}

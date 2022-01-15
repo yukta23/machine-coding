@@ -1,0 +1,15 @@
+package com.parking.main;
+
+import com.parking.services.ParkingService;
+import com.parking.services.ParkingServiceImpl;
+
+public class main {
+
+	public static void main(String[] args) {
+		ParkingService parking = new ParkingServiceImpl();
+		parking.createParkingLot(123, 10, 6);
+		parking.showParkingLotStatus(10);
+		parking.showParkingLotStatus(123);
+	}
+
+}

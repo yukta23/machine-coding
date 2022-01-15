@@ -1,0 +1,10 @@
+package com.parking.main;
+
+public class main {
+
+	public static void main(String[] args) {
+		ParkingService ps = new ParkingServiceImpl();
+
+	}
+
+}

@@ -1,0 +1,32 @@
+package com.parking.models;
+
+import com.parking.utils.Type;
+
+public class Slot {
+	private int id;
+	private Type type;
+	private int floor;
+	
+	public Slot(int id, int floor, Type type) {
+		this.id = id;
+		this.floor = floor;
+		this.type = type;
+	}
+
+	public Type getType() {
+		return type;
+	}
+
+	public void setType(Type type) {
+		this.type = type;
+	}
+
+	public int getFloor() {
+		return floor;
+	}
+
+	public void setFloor(int floor) {
+		this.floor = floor;
+	}
+	
+}

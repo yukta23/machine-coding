@@ -1,0 +1,43 @@
+package com.parking.models;
+
+import java.util.ArrayList;
+
+public class Floor {
+	private int id;
+	private int parkingId;
+	private int numSlots;
+	ArrayList<Slot> slots;
+	
+	public Floor(int id, int parkingId, int numSlots) {
+		this.id = id;
+		this.parkingId = parkingId;
+		this.numSlots = numSlots;
+		this.slots = new ArrayList<>(numSlots);
+	}
+
+	public int getParkingId() {
+		return parkingId;
+	}
+
+	public void setParkingId(int parkingId) {
+		this.parkingId = parkingId;
+	}
+
+	public int getNumSlots() {
+		return numSlots;
+	}
+
+	public void setNumSlots(int numSlots) {
+		this.numSlots = numSlots;
+	}
+
+	public ArrayList<Slot> getSlots() {
+		return slots;
+	}
+
+	public void setSlots(ArrayList<Slot> slots) {
+		this.slots = slots;
+	}
+	
+	
+}

@@ -1,0 +1,5 @@
+package com.snakeLadder.services;
+
+public class PlayGame {
+
+}

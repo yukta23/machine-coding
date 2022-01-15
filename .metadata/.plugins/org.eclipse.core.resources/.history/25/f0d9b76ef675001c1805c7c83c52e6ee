@@ -1,0 +1,13 @@
+package com.snakeLadder.models;
+
+public class Player {
+	public String name;
+	public int Xpos;
+	public int Ypos;
+	
+	public Player(String name) {
+		this.name = name;
+		this.Xpos = -1;
+		this.Ypos = -1;
+	}
+}
