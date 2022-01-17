@@ -42,5 +42,6 @@ public class Main {
 		int boardSize = 10;
 		PlayGame game = new PlayGame();
 		game.init(snakes, ladders, boardSize, players);
+		sc.close();
 	}
 }
