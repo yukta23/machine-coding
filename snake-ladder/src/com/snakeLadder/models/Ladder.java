@@ -1,26 +1,24 @@
 package com.snakeLadder.models;
 
 public class Ladder {
-	private int head;
-	private int tail;
+	private int start;
+	private int end;
 	
-	public Ladder(int head, int tail) {
-		this.head = head;
-		this.tail = tail;
+	public Ladder(int start, int end) {
+		super();
+		this.start = start;
+		this.end = end;
 	}
-	public int getHead() {
-		return head;
+	public int getStart() {
+		return start;
 	}
-
-	public void setHead(int head) {
-		this.head = head;
+	public void setStart(int start) {
+		this.start = start;
 	}
-
-	public int getTail() {
-		return tail;
+	public int getEnd() {
+		return end;
 	}
-
-	public void setTail(int tail) {
-		this.tail = tail;
+	public void setEnd(int end) {
+		this.end = end;
 	}
 }

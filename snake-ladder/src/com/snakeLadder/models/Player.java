@@ -2,11 +2,11 @@ package com.snakeLadder.models;
 
 public class Player {
 	private String name;
-	private int pos;
+	private int position;
 	
 	public Player(String name) {
 		this.name = name;
-		this.pos = 0;
+		this.position = 0;
 	}
 
 	public String getName() {
@@ -17,11 +17,11 @@ public class Player {
 		this.name = name;
 	}
 
-	public int getPos() {
-		return pos;
+	public int getPosition() {
+		return position;
 	}
 
-	public void setPos(int pos) {
-		this.pos = pos;
+	public void setPosition(int pos) {
+		this.position = pos;
 	}
 }

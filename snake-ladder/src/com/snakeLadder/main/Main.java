@@ -6,42 +6,36 @@ import java.util.Scanner;
 import com.snakeLadder.models.Ladder;
 import com.snakeLadder.models.Player;
 import com.snakeLadder.models.Snake;
-import com.snakeLadder.services.PlayGame;
+
 
 public class Main {
 
 	public static void main(String[] args) {
-		Scanner sc= new Scanner(System.in);
-		System.out.println("Enter the number of snakes ");
+		Scanner sc = new Scanner(System.in);
 		int numSnakes = sc.nextInt();
-		int snakeHead, snakeTail;
-		ArrayList<Snake> snakes = new ArrayList<Snake>();
+		ArrayList<Snake> snakes = new ArrayList<>(numSnakes);
+		int head, tail;
 		for( int i = 0; i < numSnakes; i++ ) {
-			snakeHead = sc.nextInt();
-			snakeTail = sc.nextInt();
-			Snake newSnake = new Snake(snakeHead, snakeTail);
-			snakes.add(newSnake);
+			head = sc.nextInt();
+			tail = sc.nextInt();
+			snakes.add(new Snake(head, tail));
 		}
-		int  numLadders = sc.nextInt();
-		int ladderHead, ladderTail;
-		ArrayList<Ladder> ladders = new ArrayList<Ladder>();
+		int numLadders = sc.nextInt();
+		ArrayList<Ladder> ladders = new ArrayList<>(numLadders);
 		for( int i = 0; i < numLadders; i++ ) {
-			ladderHead = sc.nextInt();
-			ladderTail = sc.nextInt();
-			Ladder newLadder = new Ladder(ladderHead, ladderTail);
-			ladders.add(newLadder);
+			head = sc.nextInt();
+			tail = sc.nextInt();
+			ladders.add(new Ladder(head, tail));
 		}
 		int numPlayers = sc.nextInt();
-		sc.nextLine();
-		ArrayList<Player> players = new ArrayList<Player>();
+		String name;
+		ArrayList<Player> players = new ArrayList<>(numPlayers);
 		for( int i = 0; i < numPlayers; i++ ) {
-			String playerName = sc.nextLine();
-			Player newPlayer = new Player(playerName);
-			players.add(newPlayer);
+			name = sc.next();
+			players.add(new Player(name));
 		}
-		int boardSize = 10;
-		PlayGame game = new PlayGame();
-		game.init(snakes, ladders, boardSize, players);
+		Game game = new Game(snakes, ladders, players, 10);
+		game.startGame();
 		sc.close();
 	}
 }
