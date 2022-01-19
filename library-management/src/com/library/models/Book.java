@@ -9,22 +9,20 @@ public class Book {
 	private ArrayList<String> authors;
 	private ArrayList<String> publishers;
 	private ArrayList<Integer> bookCopyIds;
-	public Book(int bookId, String title, ArrayList<String> authors, ArrayList<String> publishers,
+	
+	public Book(int id, String title, ArrayList<String> authors, ArrayList<String> publishers,
 			ArrayList<Integer> bookCopyIds) {
-		this.id = bookId;
+		this.id = id;
 		this.title = title;
 		this.authors = authors;
 		this.publishers = publishers;
 		this.bookCopyIds = bookCopyIds;
 	}
-//	public Book(Book b) { // Copy constructor to create a copy of book
-//		this.id = Book.automatic_book_id++;
-//		this.title = b.title;
-//		this.authors = b.authors;
-//		this.publishers = b.publishers;
-//	}
-	public int getId() { // no setter for this
+	public int getId() {
 		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getTitle() {
 		return title;

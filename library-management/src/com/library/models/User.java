@@ -7,18 +7,18 @@ import java.util.Objects;
 public class User {
 	private int id;
 	private String name;
-	private HashMap<Integer, LocalDate> booksBorrowed; // BookCopyId of book borrowed, due date
-	public User(int userId) {
-		this.id = userId;
-		this.name = "DEFAULT";
+	// bookCopyId, due date
+	private HashMap<Integer, LocalDate> booksBorrowed;
+	public User(int id) {
+		this.id = id;
+		this.name = "NA";
 		this.booksBorrowed = new HashMap<>();
-	}
-	public User(int userId, String name) {
-		this(userId);
-		this.name = name;
 	}
 	public int getId() {
 		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getName() {
 		return name;

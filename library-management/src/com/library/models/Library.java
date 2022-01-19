@@ -2,35 +2,41 @@ package com.library.models;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 
 public class Library {
 	private int id;
-	private int num_racks;
-	// each rack stores bookId not bookCopyId
-	private ArrayList<HashSet<Integer>> racks; 
-	private HashMap<Integer, User> users;
-	// hash code and equals already overridden for Book objects in order to facilitate comparison
+	private int numRacks;
+	// stores bookIds NOT bookCopyIds which should not repeat per rack
+	private ArrayList<Rack> racks;
+	private HashMap<Integer, User> users; // to keep track of all users
+	private HashMap<Integer, Book> books; // to keep track of all books
 	
-	public Library(int id, int num_racks) {
+	public Library(int id, int numRacks) {
 		this.id = id;
-		this.num_racks = num_racks;
+		this.numRacks = numRacks;
 		this.racks = new ArrayList<>();
 		this.users = new HashMap<>();
-		for( int i = 0; i < num_racks; i++ ) {
-			this.racks.add(new HashSet<Integer>());
+		this.books = new HashMap<>();
+		for(int i = 0; i < numRacks; i++ ) { // Important
+ 			this.racks.add(new Rack());
 		}
 	}
-	public int getId() { // Only getter for this
+	public int getId() {
 		return id;
 	}
-	public int getNum_racks() {
-		return this.num_racks;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public ArrayList<HashSet<Integer>> getRacks() {
+	public int getNumRacks() {
+		return numRacks;
+	}
+	public void setNumRacks(int numRacks) {
+		this.numRacks = numRacks;
+	}
+	public ArrayList<Rack> getRacks() {
 		return racks;
 	}
-	public void setRacks(ArrayList<HashSet<Integer>> racks) {
+	public void setRacks(ArrayList<Rack> racks) {
 		this.racks = racks;
 	}
 	public HashMap<Integer, User> getUsers() {
@@ -38,5 +44,11 @@ public class Library {
 	}
 	public void setUsers(HashMap<Integer, User> users) {
 		this.users = users;
+	}
+	public HashMap<Integer, Book> getBooks() {
+		return books;
+	}
+	public void setBooks(HashMap<Integer, Book> books) {
+		this.books = books;
 	}
 }
