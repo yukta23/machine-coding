@@ -22,10 +22,10 @@ public class Value {
 	public String toString() {
 		String stringConv = "";
 		for(Map.Entry<String, Object> element : this.valueObj.entrySet()) {
-			String key = (String)element.getKey();
+			String key = element.getKey();
 			stringConv += key;
 			stringConv +=":";
-			String value = (String)element.getValue();
+			String value = element.getValue().toString();
 			stringConv += value;
 			stringConv += ",";
 		}

@@ -13,7 +13,7 @@ public interface DataService {
 	
 	//Adds the key and the attributes to the key-value store. 
 	//If the key already exists then the value is replaced.
-	String put(String key, ArrayList<Pair> keyValuePairs);
+	String put(String key, ArrayList<Pair> keyValuePairs) throws Exception;
 	//deletes key-value pair from the store
 	void delete(String key) throws Exception;
 	

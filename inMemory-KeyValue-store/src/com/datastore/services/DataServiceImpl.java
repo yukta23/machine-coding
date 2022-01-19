@@ -10,6 +10,7 @@ import com.datastore.models.Value;
 
 public class DataServiceImpl implements DataService {
 	
+	//This is the datastore, Datastore class is not needed
 	private HashMap<String, Value> store = new HashMap<>();
 	
 	public void setDataStore(DataStore dataStore) {
@@ -42,17 +43,26 @@ public class DataServiceImpl implements DataService {
 	}
 
 	@Override
-	public String put(String key, ArrayList<Pair> keyValuePairs) {
-		HashMap<String, Object> valueObj = new HashMap<>();
-		for(Pair p : keyValuePairs) {
-			if(!valueObj.containsKey(p.first)) {
+	public String put(String key, ArrayList<Pair> keyValuePairs) throws Exception {
+		if (this.store.containsKey(key)) { // update
+			Value val = this.store.get(key);
+			HashMap<String, Object> valueObj = val.getValueObj();
+			for(Pair p : keyValuePairs) {
+				if (valueObj.containsKey(p.first)) {
+					//compare the data types
+					if (valueObj.get(p.first).getClass() == p.second.getClass()) {
+						valueObj.replace(p.first, p.second);
+					} else {
+						throw new Exception("Data type does not match");
+					}
+				}
+			}
+		} else { // add new entry
+			HashMap<String, Object> valueObj = new HashMap<>();
+			for(Pair p : keyValuePairs) {
 				valueObj.put(p.first, p.second);
 			}
-		}
-		Value val = new Value(valueObj);
-		if (this.store.containsKey(key)) {
-			this.store.replace(key, val);
-		} else {
+			Value val = new Value(valueObj);
 			this.store.put(key, val);
 		}
 		return key;
@@ -76,5 +86,16 @@ public class DataServiceImpl implements DataService {
 		}
 		return keys;
 	}
-
+	public void printDataStore() {
+		for(Map.Entry<String, Value> mapElement : this.store.entrySet()) {
+			String key = (String)mapElement.getKey();
+			Value val = (Value)mapElement.getValue();
+			System.out.print(key.toString() + " : ");
+			for(Map.Entry<String, Object> element: val.getValueObj().entrySet()) {
+				String k = (String)element.getKey();
+				Object v = element.getValue();
+				System.out.println(k.toString() + " : " + v.toString());
+			}
+		}
+	}
 }

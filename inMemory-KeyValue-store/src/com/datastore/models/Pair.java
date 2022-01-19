@@ -2,8 +2,8 @@ package com.datastore.models;
 
 public class Pair {
 	public String first;
-	public String second;
-	public Pair(String first, String second) {
+	public Object second; // to store String, Integer, Double or Boolean
+	public Pair(String first, Object second) {
 		this.first = first;
 		this.second = second;
 	}
